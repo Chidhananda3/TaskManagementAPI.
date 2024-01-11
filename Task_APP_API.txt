@@ -1,0 +1,104 @@
+API DOC
+
+List of users added
+1) (username - admin, password - admin) : Can we all the tasks
+2) (username - guest, password - guest) : A guest user can view only the tasks added to the guest
+3) (username - member, password - member) : A member user can view only the tasks added to the member
+
+-------------------------------------------------------------------------------------------------------
+
+Create Task API
+
+URL : http://localhost:8080/api/tasks/
+
+Method : POST
+
+Body : 
+{
+    "title":"three",
+    "description":"desc",
+    "dueDate":"20200-10-10 10:10:10",
+    "status": "completed",
+    "userId" : 1
+}
+
+Response : 
+
+{
+    "id": 1,
+    "title": "inventory",
+    "description": "check the inventory",
+    "dueDate": "20200-10-10 10:10:10",
+    "status": "completed",
+    "userId": 1
+}
+
+-------------------------------------------------------------------------------------------------------
+
+Update Task API
+
+URL : http://localhost:8080/api/tasks/
+
+Method : PUT
+
+Body : 
+{
+    "id" : 1,
+    "title":"ten",
+    "description":"desc",
+    "dueDate":"20200-10-10 10:10:10",
+    "status": "completed",
+    "userId" : 2
+}
+
+Response : 
+
+{
+    "id" : 1,
+    "title":"ten",
+    "description":"desc",
+    "dueDate":"20200-10-10 10:10:10",
+    "status": "completed",
+    "userId" : 2
+}
+
+
+-------------------------------------------------------------------------------------------------------
+
+
+Get Task API
+
+URL : http://localhost:8080/api/tasks?userId=3
+
+Method : GET
+
+
+Response : 
+
+[
+    {
+        "id": 7,
+        "title": "three",
+        "description": "desc",
+        "dueDate": "20200-10-10 10:10:10",
+        "status": "completed",
+        "userId": 3
+    }
+]
+
+
+-------------------------------------------------------------------------------------------------------
+
+Get Task API
+
+URL : http://localhost:8080/api/tasks/4
+
+Method : DELETE
+
+
+Response : 
+
+Task deleted succesfully
+
+
+-------------------------------------------------------------------------------------------------------
